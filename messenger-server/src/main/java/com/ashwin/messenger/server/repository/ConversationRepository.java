@@ -7,5 +7,6 @@ import com.ashwin.messenger.model.Conversation;
 public interface ConversationRepository extends GenericRepository<Conversation, Integer> {
 
 	List<Conversation> getByStudentEID(String eid);
+	Conversation getByID(Integer conversationID);
 	
 }

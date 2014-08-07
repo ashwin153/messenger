@@ -42,7 +42,13 @@ public class MessengerServiceHibernate implements MessengerService {
 	}
 	
 	@Override
-	public List<Message> getAdditionalMessages(int id, int size, int additional) {
+	public List<Message> getAdditionalMessages(Student student, int id, int size, int additional) {
+		// Updates the last view time for the student. This field is used by clients to determine
+		// if someone has 'seen' or 'read' a message.
+		Conversation conversation = _conversationRepository.getByID(id);
+		conversation.getRecipient(student).setLastViewTime(System.currentTimeMillis());
+		_conversationRepository.update(conversation);
+		
 		return _messageRepository.getAdditionalMessages(id, size, additional);
 	}
 	

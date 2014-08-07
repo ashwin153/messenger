@@ -30,9 +30,10 @@ public class MessengerController {
 	@RequestMapping(method=RequestMethod.GET, value="{eid}/conversation/{id}")
 	public @ResponseBody List<Message> getAdditionalMessages(@PathVariable String eid, 
 			@PathVariable int id, @RequestParam("size") int size, @RequestParam("additional") int additional) {
-		if(_directoryService.getStudentByEID(eid) == null) return null;
-
-		return _messengerService.getAdditionalMessages(id, size, additional);
+		Student student = _directoryService.getStudentByEID(eid);
+		if(student == null) return null;
+		
+		return _messengerService.getAdditionalMessages(student, id, size, additional);
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="{eid}/conversation")

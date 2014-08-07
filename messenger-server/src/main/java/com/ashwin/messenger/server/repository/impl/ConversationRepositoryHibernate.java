@@ -26,7 +26,8 @@ public class ConversationRepositoryHibernate implements ConversationRepository {
 		List<Conversation> conversations = (List<Conversation>) _factory.getCurrentSession()
 				.createCriteria(Conversation.class)
 				.createAlias("recipients", "recipients")
-				.add(Restrictions.eq("recipients.eid", eid))
+				.createAlias("recipients.student", "student")
+				.add(Restrictions.eq("stduent.eid", eid))
 				.list();
 		
 		// Initializes the first message. This message is used for display purposes.
@@ -36,6 +37,14 @@ public class ConversationRepositoryHibernate implements ConversationRepository {
 					Hibernate.initialize(conversation.getMessages().get(0));
 		
 		return conversations;
+	}
+	
+	@Override
+	public Conversation getByID(Integer conversationID) {
+		return (Conversation) _factory.getCurrentSession()
+				.createCriteria(Conversation.class)
+				.add(Restrictions.eq("conversationID", conversationID))
+				.uniqueResult();
 	}
 	
 	@Override
