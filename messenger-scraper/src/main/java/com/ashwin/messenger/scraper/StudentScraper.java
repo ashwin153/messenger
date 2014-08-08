@@ -1,7 +1,6 @@
 package com.ashwin.messenger.scraper;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;

@@ -31,6 +31,11 @@ public class MessengerServiceHibernate implements MessengerService {
 		return _messageRepository.add(message);
 	}
 	
+//	@Override
+//	public List<Conversation> getNewConversations(Student student) {
+//		return _conversationRepository.getByNew(student);
+//	}
+	
 	@Override
 	public List<Message> getNewMessages(Student student) {
 		return _messageRepository.getByNew(student);

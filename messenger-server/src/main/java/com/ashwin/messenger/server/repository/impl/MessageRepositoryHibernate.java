@@ -26,7 +26,7 @@ public class MessageRepositoryHibernate implements MessageRepository {
 		return (List<Message>) _factory.getCurrentSession()
 				.createCriteria(Message.class)
 				.createAlias("sender", "sender")
-				.add(Restrictions.gt("SENT_TIME", student.getLastRefreshTime()))
+				.add(Restrictions.gt("sentTime", student.getLastRefreshTime()))
 				.add(Restrictions.ne("sender.studentID", student.getStudentID()))
 				.list();
 	}

@@ -43,6 +43,18 @@ public class MessengerController {
 		return _messengerService.getConversations(eid);
 	}
 	
+//	@RequestMapping(method=RequestMethod.GET, value="{eid}/update")
+//	public @ResponseBody List<Conversation> getNewConversations(@PathVariable String eid) {
+//		Student student = _directoryService.getStudentByEID(eid);
+//		if(student == null) return null;
+//		
+//		List<Conversation> conversations = _messengerService.getNewConversations(student);
+//		student.setLastRefreshTime(System.currentTimeMillis());
+//		_directoryService.updateStudent(student);
+//		
+//		return conversations;
+//	}
+	
 	@RequestMapping(method=RequestMethod.GET, value="{eid}/update")
 	public @ResponseBody List<Message> getNewMessages(@PathVariable String eid) {
 		Student student = _directoryService.getStudentByEID(eid);

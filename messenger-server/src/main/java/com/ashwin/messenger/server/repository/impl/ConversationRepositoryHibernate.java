@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ashwin.messenger.model.Conversation;
+import com.ashwin.messenger.model.Student;
 import com.ashwin.messenger.server.repository.ConversationRepository;
 
 @Repository("conversationRepository")
@@ -38,6 +39,25 @@ public class ConversationRepositoryHibernate implements ConversationRepository {
 		
 		return conversations;
 	}
+	
+	
+//	@Override
+//	@SuppressWarnings("unchecked")
+//	public List<Conversation> getByNew(Student student) {
+//		List<Conversation> conversations = (List<Conversation>) _factory.getCurrentSession()
+//				.createCriteria(Conversation.class)
+//				.createAlias("messages", "messages")
+//				.add(Restrictions.gt("messages.sentTime", student.getLastRefreshTime()))
+//				.add(Restrictions.ne("messages.sender.studentID", student.getStudentID()))
+//				.list();
+//		
+//		if(conversations != null)
+//			for(Conversation conversation : conversations)
+//				if(!conversation.getMessages().isEmpty())
+//					Hibernate.initialize(conversation.getMessages().get(0));
+//		
+//		return conversations;
+//	}
 	
 	@Override
 	public Conversation getByID(Integer conversationID) {

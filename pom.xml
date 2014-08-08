@@ -24,6 +24,20 @@
 	
 	<dependencyManagement>
 		<dependencies>
+		    <!-- Android Dependencies -->
+		    <dependency>
+				<groupId>com.google.android</groupId>
+				<artifactId>android</artifactId>
+				<version>4.1.1.4</version>
+				<scope>provided</scope>
+			</dependency>
+			
+		    <dependency>
+				<groupId>com.google.android</groupId>
+				<artifactId>support-v4</artifactId>
+				<version>r7</version>
+			</dependency>
+		
 		    <!-- Inter-Project Dependencies -->
 		    <dependency>
 		        <groupId>com.ashwin.messenger</groupId>

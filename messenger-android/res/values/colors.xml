@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Texas Colors -->
+    <color name="orange">#BF5700</color>
+    <color name="white">#FFFFFF</color>
+    
+    <!-- Text colors. (Black for main text, Dark Grey for subtext) -->
+    <color name="black">#000000</color>
+    <color name="light_grey">#E6E6E6</color>
+    <color name="dark_grey">#ADADAD</color>
+    
+</resources>

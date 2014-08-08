@@ -10,8 +10,10 @@ public interface MessengerService {
 	
 	// Adds conversation if it doesn't exist
 	Message sendMessage(Message message);
-	List<Message> getNewMessages(Student student);
 	List<Message> getAdditionalMessages(Student student, int conversationID, int size, int additional);
 	List<Conversation> getConversations(String eid);
 	
+	List<Message> getNewMessages(Student student);
+//	List<Conversation> getNewConversations(Student student);
+
 }
