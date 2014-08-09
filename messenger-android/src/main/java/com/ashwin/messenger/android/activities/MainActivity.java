@@ -13,6 +13,10 @@ import com.ashwin.messenger.android.adapters.TabPagerAdapter;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
+	// These arrays contain the icons for each tab when they are pressed or not
+	private static final int[] TAB_NORMAL  = new int[] { R.drawable.ic_action_social_group_normal, R.drawable.ic_action_social_chat_normal, R.drawable.ic_action_action_settings_normal };
+	private static final int[] TAB_PRESSED = new int[] { R.drawable.ic_action_social_group_pressed, R.drawable.ic_action_social_chat_pressed, R.drawable.ic_action_action_settings_pressed };
+	
 	private TabPagerAdapter _tabPagerAdapter;
 	private ViewPager _viewPager;
 	private ActionBar _actionBar;
@@ -25,20 +29,25 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         _tabPagerAdapter = new TabPagerAdapter(getSupportFragmentManager());
         _viewPager = (ViewPager) findViewById(R.id.MainActivity_pager);
         _actionBar = getActionBar();
-        
+                
         _viewPager.setAdapter(_tabPagerAdapter);
         _actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         _actionBar.setDisplayShowTitleEnabled(false);
         _actionBar.setDisplayShowHomeEnabled(false);
 
-        // tab.setIcon(R.drawable.tab_icon);
-        String[] tabNames = new String[] {"Directory", "Messenger", "Profile"};
-        for(String tabName : tabNames)
-        	_actionBar.addTab(_actionBar.newTab().setText(tabName).setTabListener(this));
+        _actionBar.addTab(_actionBar.newTab().setIcon(TAB_PRESSED[0]).setTabListener(this));
+        for(int i = 1; i < TAB_NORMAL.length; i++)
+        	_actionBar.addTab(_actionBar.newTab().setIcon(TAB_NORMAL[i]).setTabListener(this));
         
-       _viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        _viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
+            	for(int i = 0; i < TAB_NORMAL.length; i++)
+            		if(i == position)
+            			_actionBar.getTabAt(i).setIcon(TAB_PRESSED[i]);
+            		else
+            			_actionBar.getTabAt(i).setIcon(TAB_NORMAL[i]);
+            				
                 _actionBar.setSelectedNavigationItem(position);
             }
  
