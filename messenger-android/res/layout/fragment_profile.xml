@@ -2,7 +2,237 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
     
+    <!-- Title Layout -->
+	<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+        
+        <!-- Profile Picture -->
+        <ImageView android:id="@+id/ProfileFragment_picture"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bg_profile_picture"
+           	android:src="@drawable/ic_launcher"/>
+        
+        <!-- Name -->
+        <TextView android:id="@+id/ProfileFragment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ProfileFragment_picture"
+            android:text="Ashwin Madavan"
+            android:textColor="@color/dark_grey"
+            style="@android:style/TextAppearance.Holo.Large"/>
 
+        <!-- Graduating Class/Year -->
+        <TextView android:id="@+id/ProfileFragment_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ProfileFragment_name"
+            android:layout_toRightOf="@id/ProfileFragment_picture"
+            android:text="Class of 2018"
+            android:textColor="@color/grey"
+            style="@android:style/TextAppearance.Holo.Small"/>
+        
+    </RelativeLayout>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    
+    <!-- Student Profile -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card"
+        android:layout_marginBottom="10dp">
+        
+        <!-- Title TextView -->
+        <TextView 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Student Profile"
+            android:textColor="@color/orange"
+            style="@android:style/TextAppearance.Holo.Medium"/>
+        
+        <!-- Email -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Email"
+                android:textColor="@color/dark_grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+            <TextView android:id="@+id/ProfileFragment_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ashwin.madavan@gmail.com"
+                android:textColor="@color/grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+        </LinearLayout>
+        
+        <!-- Phone -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Phone"
+                android:textColor="@color/dark_grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+            <TextView android:id="@+id/ProfileFragment_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(408) 833-3464"
+                android:textColor="@color/grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+        </LinearLayout>
+        
+        <!-- Birthday -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Birthday"
+                android:textColor="@color/dark_grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+            <TextView android:id="@+id/ProfileFragment_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="03/28/1996"
+                android:textColor="@color/grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+        </LinearLayout>
+        
+        <!-- Major -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Major"
+                android:textColor="@color/dark_grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+            <TextView android:id="@+id/ProfileFragment_major"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B.S. Computer Science"
+                android:textColor="@color/grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+        </LinearLayout>
+        
+        <!-- College -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="College"
+                android:textColor="@color/dark_grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+            <TextView android:id="@+id/ProfileFragment_college"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="College of Natural Sciences"
+                android:textColor="@color/grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+        </LinearLayout>
+        
+        <!-- Dorm -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dorm"
+                android:textColor="@color/dark_grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+            <TextView android:id="@+id/ProfileFragment_dorm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="W0139"
+                android:textColor="@color/grey"
+                style="@android:style/TextAppearance.Holo.Small"/>
+            
+        </LinearLayout>
+    </LinearLayout>
+    
+    <!-- Schedule (eventually move to a WeekView) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card"
+        android:layout_marginBottom="10dp">
+        
+        <!-- Title TextView -->
+        <TextView 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Courses Fall 2014"
+            android:textColor="@color/orange"
+            style="@android:style/TextAppearance.Holo.Medium"/>
+        
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="200dp" />
+        
+    </LinearLayout>
+    
+    <!-- Refresh Button -->
+    <Button android:id="@+id/ProfileFragment_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Refresh"/>
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

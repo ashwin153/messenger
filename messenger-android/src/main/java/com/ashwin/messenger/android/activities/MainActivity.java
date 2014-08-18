@@ -35,6 +35,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         _actionBar.setDisplayShowTitleEnabled(false);
         _actionBar.setDisplayShowHomeEnabled(false);
 
+        // Sets the first tab icon to pressed
         _actionBar.addTab(_actionBar.newTab().setIcon(TAB_PRESSED[0]).setTabListener(this));
         for(int i = 1; i < TAB_NORMAL.length; i++)
         	_actionBar.addTab(_actionBar.newTab().setIcon(TAB_NORMAL[i]).setTabListener(this));

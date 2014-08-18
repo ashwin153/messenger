@@ -11,6 +11,14 @@
             backward-compatibility can go here.
         -->
     </style>
+    
+    <style name="Text.Small" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/dark_grey</item>
+  	</style>
+  	
+    <style name="Text.Medium" parent="@android:style/TextAppearance.Medium"></style>
+    
+    <style name="Text.Large" parent="@android:style/TextAppearance.Large"></style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">

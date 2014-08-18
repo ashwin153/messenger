@@ -31,7 +31,7 @@ public class Timing {
 	private Long _startTime, _endTime;
 	
 	public enum Day {
-		MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+		MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY;
 	}
 	
 	public Timing() {}
