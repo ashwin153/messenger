@@ -41,7 +41,7 @@ public class ScheduleView extends FrameLayout {
 	    List<Timing> timings = new ArrayList<Timing>();
 	    timings.add(new Timing(null, "BUR", "1.234", Day.MONDAY, 1407546000000L, 1407553200000L));
 	    timings.add(new Timing(null, "SZE", "2.345", Day.WEDNESDAY, 1407470400000L, 1407474000000L));
-	    courses.add(new Course(null, "UGS", "12345", "Middle East Today", "303", timings));
+	    courses.add(new Course(null, "UGS", "303", "Middle East Today", "12345", timings));
 		
 	    // Create a relativeLayout for each day of the week. Set the layout params, so that each layout
 	    // gets stretched the same amount by the parent linear layout.

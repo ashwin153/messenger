@@ -115,7 +115,7 @@ public class StudentScraper {
 			String department = fields.get(1).html().substring(0, index);
 			String number =  fields.get(1).html().substring(index + 1);
 			String name = fields.get(2).html();
-			Course course = new Course(null, department, code, name, number, null);
+			Course course = new Course(null, department, number, name, code, null);
 			
 			// Scrape array fields, and parse them back in the subsequent FOR loop
 			Elements buildings = fields.get(3).select("a");

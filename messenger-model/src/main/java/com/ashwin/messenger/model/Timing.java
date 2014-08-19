@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Timing {
 	
-	private Integer _courseLocationID;
+	private Integer _timingID;
 	private String _building;
 	private String _room;
 	private Day _day;
@@ -36,8 +36,8 @@ public class Timing {
 	
 	public Timing() {}
 	
-	public Timing(Integer courseLocationID, String building, String room, Day day, Long startTime, Long endTime) {
-		_courseLocationID = courseLocationID;
+	public Timing(Integer timingID, String building, String room, Day day, Long startTime, Long endTime) {
+		_timingID = timingID;
 		_building = building;
 		_room = room;
 		_day = day;
@@ -49,12 +49,12 @@ public class Timing {
 	@GenericGenerator(name="gen",strategy="increment")
 	@GeneratedValue(generator="gen")
 	@Column(name="ID", unique=true, nullable=false)
-	public Integer getCourseLocationID() {
-		return _courseLocationID;
+	public Integer getTimingID() {
+		return _timingID;
 	}
 	
-	public void setCourseLocationID(int courseLocationID) {
-		_courseLocationID = courseLocationID;
+	public void setTimingID(int timingID) {
+		_timingID = timingID;
 	}
 	
 	@Column(name="BUILDING")
@@ -107,7 +107,7 @@ public class Timing {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((_courseLocationID == null) ? 0 : _courseLocationID.hashCode());
+		result = prime * result + ((_timingID == null) ? 0 : _timingID.hashCode());
 		return result;
 	}
 
@@ -121,10 +121,10 @@ public class Timing {
 			return false;
 		
 		Timing other = (Timing) obj;
-		if (_courseLocationID == null) {
-			if (other._courseLocationID != null)
+		if (_timingID == null) {
+			if (other._timingID != null)
 				return false;
-		} else if (!_courseLocationID.equals(other._courseLocationID))
+		} else if (!_timingID.equals(other._timingID))
 			return false;
 		return true;
 	}
