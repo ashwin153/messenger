@@ -23,7 +23,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource({"classpath:messenger.properties"})
+@PropertySource({"classpath:/messenger.properties"})
 @ComponentScan({"com.ashwin.messenger"})
 public class MessengerConfig {
 

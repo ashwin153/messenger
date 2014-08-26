@@ -30,8 +30,8 @@ public class Course {
 
 	public Course() {}
 	
-	public Course(Integer courseID, String department, String code, 
-			String name, String number, List<Timing> locations) {
+	public Course(Integer courseID, String department, String number, 
+			String name, String code, List<Timing> locations) {
 		
 		_courseID = courseID;
 		_department = department;
