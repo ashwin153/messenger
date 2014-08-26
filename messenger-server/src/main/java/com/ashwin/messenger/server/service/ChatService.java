@@ -6,7 +6,7 @@ import com.ashwin.messenger.model.Conversation;
 import com.ashwin.messenger.model.Message;
 import com.ashwin.messenger.model.Student;
 
-public interface MessengerService {
+public interface ChatService {
 	
 	// Adds conversation if it doesn't exist
 	Message sendMessage(Message message);

@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ashwin.messenger.model.Conversation;
-import com.ashwin.messenger.model.Student;
 import com.ashwin.messenger.server.repository.ConversationRepository;
 
 @Repository("conversationRepository")

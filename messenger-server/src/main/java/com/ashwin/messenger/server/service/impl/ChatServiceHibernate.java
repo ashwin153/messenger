@@ -12,11 +12,11 @@ import com.ashwin.messenger.model.Message;
 import com.ashwin.messenger.model.Student;
 import com.ashwin.messenger.server.repository.ConversationRepository;
 import com.ashwin.messenger.server.repository.MessageRepository;
-import com.ashwin.messenger.server.service.MessengerService;
+import com.ashwin.messenger.server.service.ChatService;
 
 @Service("messengerService")
 @Transactional(propagation = Propagation.REQUIRED, readOnly=false)
-public class MessengerServiceHibernate implements MessengerService {
+public class ChatServiceHibernate implements ChatService {
 
 	@Autowired
 	private ConversationRepository _conversationRepository;

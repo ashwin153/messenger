@@ -23,6 +23,11 @@ public class DirectoryController {
 	@Autowired
 	private DirectoryService _directoryService;
 	
+	@RequestMapping(method=RequestMethod.GET, value="/test")
+	public @ResponseBody String test() {
+		return "HELLO WORLD";
+	}
+	
 	// Scrapes a students profile off of UT servers using their actual eid and password
 	@RequestMapping(method=RequestMethod.POST, value="/{eid}/search")
 	public @ResponseBody List<Student> searchStudent(@PathVariable String eid, @RequestBody Student example) {
@@ -52,16 +57,12 @@ public class DirectoryController {
 	@RequestMapping(method=RequestMethod.GET, value="/scrape")
 	public @ResponseBody Student scrapeStudent(@RequestParam("eid") String eid, @RequestParam("password") String password) {
 		String md5 = ScraperUtils.getMD5(eid);
-		Student student = _directoryService.getStudentByEID(md5);
-		if(student != null)
-			return student;
 		
-		return StudentScraper.scrape(eid, password);
-	}
-	
-	@RequestMapping(method=RequestMethod.GET, value="/create")
-	public @ResponseBody Student scrapeStudent(@RequestBody Student student) {
-		return _directoryService.createStudent(student);
+		// If the student already exists, then return the student
+		Student student = _directoryService.getStudentByEID(md5);
+		if(student != null) return student;
+		
+		return _directoryService.createStudent(StudentScraper.scrape(eid, password));
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/{eid}/update")

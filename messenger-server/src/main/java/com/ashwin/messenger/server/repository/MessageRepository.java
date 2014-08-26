@@ -2,7 +2,6 @@ package com.ashwin.messenger.server.repository;
 
 import java.util.List;
 
-import com.ashwin.messenger.model.Conversation;
 import com.ashwin.messenger.model.Message;
 import com.ashwin.messenger.model.Student;
 
